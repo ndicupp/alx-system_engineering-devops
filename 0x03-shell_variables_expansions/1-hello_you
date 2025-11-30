@@ -1,1 +1,31 @@
+Script: 1-hello_you
+#!/bin/bash
+echo "hello $USER"
+
+Explanation:
+First line: #!/bin/bash - Shebang specifying Bash interpreter
+
+Second line: echo "hello $USER" - Prints "hello" followed by the value of the USER environment variable
+
+How it works:
+$USER is a reserved environment variable (covered in Package 3) that contains the current username
+
+When the script runs, $USER undergoes parameter expansion (covered in Package 1) and is replaced with the actual username
+
+The echo command then outputs the complete string
+
+Demonstration:
+julien@ubuntu:/tmp/0x03$ id
+uid=1000(julien) gid=1000(julien) groups=1000(julien),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare)
+julien@ubuntu:/tmp/0x03$ ./1-hello_you 
+hello julien
+
+Key concepts demonstrated:
+Reserved variables (USER variable)
+
+Parameter expansion ($USER expands to the username)
+
+Environment variables (variables available in all shells)
+
+This script will work in your sandbox environment and print "hello 6dfa82e5d5e7" since that's the username in your provided credentials.
 

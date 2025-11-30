@@ -1,1 +1,44 @@
+Script: 3-paths
+#!/bin/bash
+echo $PATH | tr ":" "\n" | wc -l
+
+Explanation:
+First line: #!/bin/bash - Shebang specifying Bash interpreter
+
+Second line:
+
+echo $PATH - Outputs the PATH variable (parameter expansion)
+
+tr ":" "\n" - Translates colons to newlines (splits PATH into separate lines)
+
+wc -l - Counts the number of lines
+
+How it works:
+PATH directories are separated by colons (:)
+
+The tr command converts each colon to a newline, putting each directory on its own line
+
+wc -l counts the lines, which equals the number of directories
+
+This handles empty entries (like :::::) by counting them as separate directories
+
+Demonstration:
+julien@ubuntu:/tmp/0x03$ echo $PATH
+/home/julien/bin:/home/julien/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+julien@ubuntu:/tmp/0x03$ . ./3-paths 
+11
+
+julien@ubuntu:/tmp/0x03$ PATH=/home/julien/bin:/home/julien/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:::::/hello
+julien@ubuntu:/tmp/0x03$ . ./3-paths 
+12
+Key concepts demonstrated:
+Parameter expansion ($PATH)
+
+Command substitution (pipeline with |)
+
+PATH structure (colon-separated directories)
+
+Text processing with tr and wc
+
+The script correctly counts 11 directories in the normal PATH and 12 when extra empty entries and /hello are added, showing it handles both populated and empty directory entries.
 

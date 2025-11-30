@@ -1,1 +1,28 @@
+#!/bin/bash
+BEST=School
+#!/bin/bash - Shebang specifying Bash interpreter
+BEST=School - Creates a local variable named BEST with value School
+
+How it works:
+This creates a local variable (covered in Package 3) that is only available in the current shell
+
+No export command is used, so it remains local
+
+The variable can be accessed with $BEST after sourcing the script
+
+Local variables are not available to child processes
+
+Usage:
+julien@ubuntu:/tmp/0x03$ source ./6-create_local_variable
+julien@ubuntu:/tmp/0x03$ echo $BEST
+School
+
+Key concepts demonstrated:
+Local variable creation - Variables without export are local
+
+Variable assignment syntax - NAME=value with no spaces around =
+
+Local vs global variables - This variable won't be available in sub-shells
+
+The script will work in your sandbox environment to create a local variable BEST with the value School that exists only in the current shell session.
 

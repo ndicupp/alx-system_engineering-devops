@@ -1,1 +1,32 @@
+#!/bin/bash
+export BEST=School
+#!/bin/bash - Shebang specifying Bash interpreter
+export BEST=School - Creates and exports a global variable named BEST with value School
 
+How it works:
+The export command (covered in Package 3) makes the variable available to child processes
+
+This creates an environment variable (global variable)
+
+The variable will be inherited by any sub-shells or programs launched from this shell
+
+Can be accessed with $BEST in the current shell and all child processes
+
+Usage:
+julien@ubuntu:/tmp/0x03$ source ./7-create_global_variable
+julien@ubuntu:/tmp/0x03$ echo $BEST
+School
+julien@ubuntu:/tmp/0x03$ bash  # Start a sub-shell
+julien@ubuntu:/tmp/0x03$ echo $BEST
+School  # Available in sub-shell too
+
+Key concepts demonstrated:
+Global variable creation - Using export to make variables environment variables
+
+Environment variables - Available to child processes
+
+Export syntax - export NAME=value format
+
+Difference from local variables - Global variables persist in sub-shells
+
+The script will work in your sandbox environment to create a global variable BEST with the value School that will be available in the current shell and all child processes.

@@ -1,1 +1,27 @@
+Script: 0-alias
+#!/bin/bash
+alias ls='rm *'
+
+Explanation:
+First line: #!/bin/bash - Shebang specifying Bash interpreter
+
+Second line: alias ls='rm *' - Creates an alias where typing ls will execute rm *
+
+What happens when you run this:
+After sourcing the script with source ./0-alias, the alias becomes active
+
+When you type ls, it actually runs rm * which deletes all files in the current directory
+
+To temporarily disable the alias and use the real ls command, you prefix with backslash: \ls
+
+Demonstration (as shown in the example):
+julien@ubuntu:/tmp/0x03$ ls
+0-alias  file1  file2
+julien@ubuntu:/tmp/0x03$ source ./0-alias 
+julien@ubuntu:/tmp/0x03$ ls
+# All files get deleted by 'rm *'
+julien@ubuntu:/tmp/0x03$ \ls
+# Shows the actual ls output (but no files remain after the alias ran)
+
+Note: This is a dangerous alias for demonstration purposes only. In real scenarios, you'd want safer aliases like alias ls='ls --color=auto' or alias rm='rm -i'.
 

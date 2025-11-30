@@ -1,1 +1,29 @@
+#!/bin/bash - Shebang specifying Bash interpreter
+set - Command that displays all shell variables and functions
+
+
+How it works:
+The set command (covered in Package 3) displays:
+
+Local variables (specific to current shell)
+
+Environment variables (global variables)
+
+Shell functions (defined functions)
+
+Unlike printenv which only shows environment variables, set shows everything
+
+The output includes variables like BASH, BASH_VERSION, functions, and both local and global variables
+
+Key concepts demonstrated:
+Local variables vs environment variables
+
+Shell functions as part of the shell environment
+
+Using set to inspect the complete shell environment
+
+Difference between set and printenv/env
+
+The script will work in your sandbox environment and display a comprehensive list of all variables and functions available in the current shell session, including those specific to Ubuntu 20.04 and the ALX sandbox configuration.
+
 

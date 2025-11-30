@@ -1,1 +1,41 @@
+#!/bin/bash
+echo $((TRUEKNOWLEDGE + 128))
 
+Key correction:
+Removed the $ from inside the arithmetic expansion - In arithmetic expansion $(()), you can reference variables directly by name without the $ prefix.
+
+Explanation:
+First line: #!/bin/bash - Shebang specifying Bash interpreter
+
+Second line: echo $((TRUEKNOWLEDGE + 128)) - Uses arithmetic expansion with direct variable reference
+
+How it works:
+In arithmetic expansion $(()), variables are referenced by name without $ (as covered in Package 2)
+
+TRUEKNOWLEDGE is automatically expanded to its value within the arithmetic context
+
+The expression TRUEKNOWLEDGE + 128 is evaluated
+
+echo prints the result followed by a newline
+
+Demonstration:
+
+julien@production-503e7013:~$ export TRUEKNOWLEDGE=1209
+julien@production-503e7013:~$ ./8-true_knowledge | cat -e
+1337$
+Key concepts:
+Arithmetic expansion - $((expression))
+
+Variable reference in arithmetic - Use variable names directly without $
+
+Shell arithmetic - Integer operations
+
+This should pass all checks:
+
+✅ Exactly 2 lines
+
+✅ First line: #!/bin/bash
+
+✅ No &&, ||, ;, sed, or bc
+
+✅ Correct output: 1337 when TRUEKNOWLEDGE=1209

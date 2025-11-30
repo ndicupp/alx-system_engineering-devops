@@ -1,1 +1,45 @@
+printf "%x\n" $DECIMAL
+Let me break this down:
 
+printf is used for formatted output
+
+"%x\n" is the format string where:
+
+%x means print the number in hexadecimal (lowercase)
+
+\n adds a new line
+
+$DECIMAL is the environment variable containing the base 10 number
+
+To create and test it:
+
+bash
+# Create the script
+echo 'printf "%x\n" $DECIMAL' > 16-decimal_to_hexadecimal
+
+# Make it executable
+chmod +x 16-decimal_to_hexadecimal
+
+# Test with the provided examples
+export DECIMAL=16
+./16-decimal_to_hexadecimal
+# Output: 10
+
+export DECIMAL=1337
+./16-decimal_to_hexadecimal | cat -e
+# Output: 539$
+
+export DECIMAL=15
+./16-decimal_to_hexadecimal | cat -e
+# Output: f$
+This solution correctly handles:
+
+Converting decimal to hexadecimal
+
+Using lowercase letters for hex digits (a-f)
+
+Adding a new line after the output
+
+Working with the DECIMAL environment variable
+
+The printf command automatically handles the base conversion and formatting for us, making this a very concise solution.

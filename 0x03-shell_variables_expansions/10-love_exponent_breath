@@ -1,1 +1,35 @@
+#!/bin/bash
+echo $((BREATH ** LOVE))
+Explanation:
+First line: #!/bin/bash - Shebang specifying Bash interpreter
+
+Second line: echo $((BREATH ** LOVE)) - Uses arithmetic expansion with exponentiation operator
+
+How it works:
+In arithmetic expansion $(()), the ** operator performs exponentiation
+
+BREATH ** LOVE calculates 4 to the power of 3
+
+The expression 4 ** 3 evaluates to 64 (4 × 4 × 4)
+
+echo prints the result followed by a newline
+
+Demonstration:
+julien@production-503e7013:~/$ export BREATH=4
+julien@production-503e7013:~/$ export LOVE=3
+julien@production-503e7013:~/$ ./10-love_exponent_breath
+64
+Calculation:
+4³ = 4 × 4 × 4 = 64
+
+Key concepts demonstrated:
+Arithmetic expansion with $(())
+
+Exponentiation operator ** in shell arithmetic
+
+Variable reference in arithmetic - direct names without $
+
+Environment variables in mathematical operations
+
+This script will work in your sandbox environment and correctly perform the exponentiation using the values from the BREATH and LOVE environment variables.
 

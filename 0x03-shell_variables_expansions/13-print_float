@@ -1,1 +1,41 @@
+printf "%.2f\n" $NUM
+Let me break this down:
+
+printf is used for formatted output
+
+"%.2f\n" is the format string where:
+
+%.2f means print a floating-point number with exactly 2 decimal places
+
+\n adds a new line
+
+$NUM is the environment variable containing the number
+
+To create and test it:
+# Create the script file
+echo 'printf "%.2f\n" $NUM' > 14-print_float
+
+# Make it executable
+chmod +x 14-print_float
+
+# Test with the provided examples
+export NUM=0
+./14-print_float
+# Output: 0.00
+
+export NUM=98
+./14-print_float
+# Output: 98.00
+
+export NUM=3.14159265359
+./14-print_float
+# Output: 3.14
+This solution handles all the test cases correctly:
+
+Integer values get .00 appended
+
+Floating-point numbers get rounded to 2 decimal places
+
+Always followed by a new line as required
+
 

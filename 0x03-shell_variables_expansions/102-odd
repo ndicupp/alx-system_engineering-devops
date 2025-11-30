@@ -1,1 +1,60 @@
+awk 'NR % 2'
+Let me break this down:
 
+awk is a powerful text processing tool
+
+NR % 2 uses the modulo operator:
+
+NR is the built-in variable that represents the current record (line) number
+
+NR % 2 gives the remainder when the line number is divided by 2
+
+When the result is 1 (true/odd line numbers), awk prints the line
+
+When the result is 0 (false/even line numbers), awk doesn't print
+
+Alternative solutions that also work:
+
+bash
+# Using sed
+sed -n '1~2p'
+
+# Using awk with explicit condition
+awk 'NR % 2 == 1'
+To create and test it:
+
+bash
+# Create the script
+echo "awk 'NR % 2'" > 17-odd
+
+# Make it executable
+chmod +x 17-odd
+
+# Test with the provided example
+ls -1 | ./17-odd
+The output should show every other line starting from the first line, which matches the example output:
+
+text
+bin
+dev
+home
+lib
+lib64
+lost+found
+mnt
+proc
+run
+srv
+t
+t~
+usr
+vmlinuz
+This solution is efficient and handles:
+
+Any input from stdin
+
+Printing odd-numbered lines (1st, 3rd, 5th, etc.)
+
+Working with any number of input lines
+
+Being concise and readable

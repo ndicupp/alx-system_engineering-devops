@@ -1,1 +1,39 @@
+#!/bin/bash
+echo $((2#$BINARY))
+Explanation:
+First line: #!/bin/bash - Shebang specifying Bash interpreter
+
+Second line: echo $((2#$BINARY)) - Uses arithmetic expansion with base conversion
+
+How it works:
+2#$BINARY uses the base conversion syntax covered in Package 2: [base#]n
+
+2# specifies that the following number is in base 2 (binary)
+
+$BINARY undergoes parameter expansion to get the binary string
+
+The arithmetic expansion $((2#$BINARY)) converts the binary number to decimal
+
+echo prints the decimal result followed by a newline
+
+Demonstration:
+bash
+julien@production-503e7013:~/$ export BINARY=10100111001
+julien@production-503e7013:~/$ ./11-binary_to_decimal
+1337
+Calculation:
+Binary 10100111001 = Decimal 1337
+
+1×1024 + 0×512 + 1×256 + 0×128 + 0×64 + 1×32 + 1×16 + 1×8 + 0×4 + 0×2 + 1×1 = 1337
+
+Key concepts demonstrated:
+Arithmetic expansion with $(())
+
+Base conversion syntax - [base#]n (covered in Package 2)
+
+Binary to decimal conversion using 2#binary_number
+
+Parameter expansion with environment variables
+
+This script will work in your sandbox environment and correctly convert any binary number stored in the BINARY environment variable to its decimal equivalent.
 

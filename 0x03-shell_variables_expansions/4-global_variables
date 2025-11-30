@@ -1,1 +1,28 @@
+#!/bin/bash
+printenv
+First line: #!/bin/bash - Shebang specifying Bash interpreter
+
+Second line: printenv - Command that prints all environment variables
+
+How it works:
+printenv is a command that displays all global/environment variables (covered in Package 3)
+
+Environment variables are available to all child processes and shells
+
+The output shows variables like HOME, PATH, USER, LANG, etc.
+
+Each line shows a variable in NAME=value format
+
+Alternative approach:
+We could also use env which serves the same purpose:
+#!/bin/bash
+env
+Key concepts demonstrated:
+Environment variables vs local variables
+
+Global variables available in all shells
+
+Using built-in commands to inspect the shell environment
+
+The script will work in your sandbox environment and display all environment variables including those specific to your Ubuntu 20.04 setup and the ALX sandbox configuration.
 

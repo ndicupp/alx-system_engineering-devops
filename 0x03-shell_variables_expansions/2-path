@@ -1,1 +1,36 @@
+Script: 2-path
+#!/bin/bash
+export PATH="$PATH:/action"
+
+Explanation:
+First line: #!/bin/bash - Shebang specifying Bash interpreter
+
+Second line: export PATH="$PATH:/action" - Adds /action to the end of the current PATH
+
+How it works:
+PATH is a reserved environment variable that contains directories where the shell looks for executables
+
+$PATH undergoes parameter expansion and is replaced with the current PATH value
+
+"$PATH:/action" creates a new string with /action appended to the current PATH
+
+export makes the change available to child processes (covered in Package 3)
+
+Demonstration:
+julien@ubuntu:/tmp/0x03$ echo $PATH
+/home/julien/bin:/home/julien/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+julien@ubuntu:/tmp/0x03$ source ./2-path 
+julien@ubuntu:/tmp/0x03$ echo $PATH
+/home/julien/bin:/home/julien/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/action
+
+Key concepts demonstrated:
+PATH variable - Shell searches directories in order from left to right
+
+Exporting variables - Making changes available to the environment
+
+Parameter expansion - Using $PATH to reference the current value
+
+Appending to PATH - Using :$PATH syntax to add to the end
+
+Since /action is added to the end of PATH, the shell will look in all other directories first before checking /action, making it the last directory searched for programs.
 

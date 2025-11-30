@@ -1,1 +1,47 @@
+tr 'A-Za-z' 'N-ZA-Mn-za-m'
+This uses the tr command to perform character substitution:
 
+'A-Za-z' specifies the input character set (all uppercase and lowercase letters)
+
+'N-ZA-Mn-za-m' specifies the output mapping for ROT13:
+
+A-Z becomes N-ZA-M (A→N, B→O, ..., M→Z, N→A, O→B, ..., Z→M)
+
+a-z becomes n-za-m (same pattern for lowercase)
+
+To create and test it:
+
+bash
+# Create the script
+echo "tr 'A-Za-z' 'N-ZA-Mn-za-m'" > 15-rot13
+
+# Make it executable
+chmod +x 15-rot13
+
+# Test with the provided example
+echo '"Everyone is a proponent of strong encryption."
+- Dorothy E. Denning' | ./15-rot13
+The output should be:
+
+text
+"Rirelbar vf n cebcbarag bs fgebat rapelcgvba."
+- Qbebgul R. Qraavat
+To verify it works both ways (encoding and decoding):
+
+bash
+# Encode
+echo "Hello World" | ./15-rot13
+# Output: Uryyb Jbeyq
+
+# Decode (same command)
+echo "Uryyb Jbeyq" | ./15-rot13
+# Output: Hello World
+The script handles:
+
+Uppercase and lowercase letters (A-Z, a-z)
+
+Non-alphabetic characters remain unchanged
+
+Works as both encoder and decoder (ROT13 property)
+
+Processes standard input
